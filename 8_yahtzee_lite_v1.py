@@ -53,7 +53,13 @@ while True:
             else:
                 easygui.msgbox("Better luck next time!")
 
-        # Asks the user to play again after 3 turns
+            again = easygui.buttonbox("Do you want to play another round?",
+                                      "Goodbye", choices=["Yes", "No"])
+            turns = 0  # Reset the amount of turns after they choose stick
+            if again == "No":
+                break
+
+        # Asks the user to play again if they've had 3 turns
         if turns == 3:
             again = easygui.buttonbox("You've had 3 turns. Do you want to play "
                                       "another round?", "Goodbye",
